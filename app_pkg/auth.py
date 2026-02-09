@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 # demo user store (replace with DB & hashed passwords)
-USERS = {"Litsa": "lomlleo", "Leo": "imthebest", "Marian", "nairaM"}
+USERS = {"Litsa": "lomlleo", "Leo": "imthebest", "Marian": "nairaM"}
 
 auth_router = APIRouter()
 
