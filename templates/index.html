@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simulation Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Simulation Dashboard</h1>
+            <div class="user-info">
+                <div class="user-badge">User: <strong>{{ user_id }}</strong></div>
+                <a href="/logout" class="logout-btn">Logout</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="info-section">
+                <p>Welcome to your real-time simulation dashboard. Below are live data streams updating in real-time via
+                    WebSocket.</p>
+            </div>
+
+            {% import "live_chart.html" as charts %}
+
+            <div class="charts-grid">
+                {{ charts.live_chart("chart1", user_id, "chart_1_update") }}
+                {{ charts.live_chart("chart2", user_id, "chart_2_update") }}
+            </div>
+
+            <div class="info-section">
+                <p><strong>💡 Tip:</strong> Charts update every second with new simulation data. Open multiple browser
+                    tabs to test multi-user connections.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Secure WebSocket connection • SessionMiddleware authenticated • Real-time multiplexed messaging</p>
+        </div>
+    </div>
+</body>
+
+</html>
