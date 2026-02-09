@@ -4,3 +4,4 @@ starlette
 watchfiles
 itsdangerous
 jinja2
+python-multipart
